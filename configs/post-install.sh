@@ -15,54 +15,59 @@ echo "Iniciando a instalação..."
 
 # Instalações via flathub
 # Dev
-flatpak install flathub org.octave.Octave
-flatpak install flathub net.sonic_pi.SonicPi
-flatpak install flathub cc.arduino.arduinoide
-flatpak install flathub com.visualstudio.code
-flatpak install flathub com.getpostman.Postman
+flatpak install flathub org.octave.Octave -y
+flatpak install flathub net.sonic_pi.SonicPi -y
+flatpak install flathub cc.arduino.arduinoide -y
+flatpak install flathub com.visualstudio.code -y
+flatpak install flathub com.getpostman.Postman -y
 
 # Social
-flatpak install flathub com.discordapp.Discord
-flatpak install flathub org.telegram.desktop
+flatpak install flathub com.discordapp.Discord -y
+flatpak install flathub org.telegram.desktop -y
 
 # Graficos
-flatpak install flathub nl.hjdskes.gcolor3
-flatpak install flathub org.flameshot.Flameshot
-flatpak install flathub org.inkscape.Inkscape
-flatpak install flathub net.scribus.Scribus
+flatpak install flathub nl.hjdskes.gcolor3 -y
+flatpak install flathub org.flameshot.Flameshot -y
+flatpak install flathub org.inkscape.Inkscape -y
+flatpak install flathub net.scribus.Scribus -y
 
 # Video e Audio
-flatpak install flathub org.audacityteam.Audacity
-flatpak install flathub org.kde.kdenlive
-flatpak install flathub com.obsproject.Studio
-flatpak install flathub com.uploadedlobster.peek
+flatpak install flathub org.audacityteam.Audacity -y
+flatpak install flathub org.kde.kdenlive -y
+flatpak install flathub com.obsproject.Studio -y
+flatpak install flathub com.uploadedlobster.peek -y
 
 #Internet
-flatpak install flathub org.chromium.Chromium
-flatpak install flathub org.deluge_torrent.deluge
+flatpak install flathub org.chromium.Chromium -y
+flatpak install flathub org.deluge_torrent.deluge -y
+flatpak install flathub com.stremio.Stremio -y
 
 # Outros
-flatpak install flathub com.spotify.Client
-flatpak install flathub com.github.phase1geo.minder
-flatpak install flathub org.gnome.gitlab.somas.Apostrophe
-flatpak install flathub com.github.johnfactotum.Foliate
-flatpak install flathub nz.mega.MEGAsync
-flatpak install flathub com.github.robertsanseries.ciano
-flatpak install flathub org.gnome.Extensions
+flatpak install flathub com.spotify.Client -y
+flatpak install flathub com.github.phase1geo.minder -y
+flatpak install flathub org.gnome.gitlab.somas.Apostrophe -y
+flatpak install flathub com.github.johnfactotum.Foliate -y
+flatpak install flathub nz.mega.MEGAsync -y
+flatpak install flathub com.github.robertsanseries.ciano -y
+flatpak install flathub org.gnome.Extensions -y
 
 # Jogos
-flatpak install flathub org.supertuxproject.SuperTux
-flatpak install flathub net.supertuxkart.SuperTuxKart
-flatpak install flathub org.desmume.DeSmuME
-flatpak install flathub io.mgba.mGBA
+flatpak install flathub org.supertuxproject.SuperTux -y
+flatpak install flathub net.supertuxkart.SuperTuxKart -y
+flatpak install flathub org.desmume.DeSmuME -y
+flatpak install flathub io.mgba.mGBA -y
+flatpak install flathub com.stepmania.StepMania -y
 
 # Instalações via apt
 sudo apt-get update
 sudo apt-get install nodejs
-npm install -g @vue/cli
 sudo apt-get install mysql-server
 sudo apt-get install gparted
 sudo apt-get install gnome-tweak-tool
+
+# Instalações npm
+npm install --global gulp-cli
+npm install -g @vue/cli
 
 # Instalações snap
 sudo snap install zenkit
@@ -75,9 +80,9 @@ sudo snap install mysql-workbench-community
 chmod +x config-git.sh
 chmod +x config-vscode.sh
 chmod +x config-zsh.sh
-./config-git
 ./config-vscode
 ./config-zsh
+./config-git
 
 echo "TÁ TUDO PRONTO. UHUUUU"
 
