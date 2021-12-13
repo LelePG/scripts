@@ -7,10 +7,13 @@ if ! [ -x "$(command -v flatpak)" ]; then
 fi
 echo "Iniciando a instalação..."
 
-
-# Jogos
-flatpak install flathub org.supertuxproject.SuperTux
-flatpak install flathub net.supertuxkart.SuperTuxKart
+# Instalações via flathub
+# Dev
+flatpak install flathub org.octave.Octave
+flatpak install flathub net.sonic_pi.SonicPi
+flatpak install flathub cc.arduino.arduinoide
+flatpak install flathub com.visualstudio.code
+flatpak install flathub com.getpostman.Postman
 
 # Social
 flatpak install flathub com.discordapp.Discord
@@ -28,13 +31,6 @@ flatpak install flathub org.kde.kdenlive
 flatpak install flathub com.obsproject.Studio
 flatpak install flathub com.uploadedlobster.peek
 
-#Dev
-flatpak install flathub org.octave.Octave
-flatpak install flathub net.sonic_pi.SonicPi
-flatpak install flathub cc.arduino.arduinoide
-flatpak install flathub com.visualstudio.code
-flatpak install flathub com.getpostman.Postman
-
 #Internet
 flatpak install flathub org.chromium.Chromium
 flatpak install flathub org.deluge_torrent.deluge
@@ -45,4 +41,29 @@ flatpak install flathub com.github.phase1geo.minder
 flatpak install flathub org.gnome.gitlab.somas.Apostrophe
 flatpak install flathub com.github.johnfactotum.Foliate
 flatpak install flathub nz.mega.MEGAsync
+flatpak install flathub com.github.robertsanseries.ciano
+flatpak install flathub org.gnome.Extensions
+
+# Jogos
+flatpak install flathub org.supertuxproject.SuperTux
+flatpak install flathub net.supertuxkart.SuperTuxKart
+flatpak install flathub org.desmume.DeSmuME
+flatpak install flathub io.mgba.mGBA
+
+# Instalações via apt
+sudo apt-get update
+sudo apt-get install nodejs
+npm install -g @vue/cli
+sudo apt-get install mysql-server
+sudo apt-get install gparted
+
+# Instalações snap
+sudo apt install snapd
+sudo snap install zenkit
+sudo snap install brave
+sudo snap install onlyoffice-desktopeditors
+sudo snap install screenkey --beta
+sudo snap install mysql-workbench-community
+
+
 
