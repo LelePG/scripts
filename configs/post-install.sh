@@ -5,6 +5,12 @@ if ! [ -x "$(command -v flatpak)" ]; then
   echo 'Instale o Flatpack.' >&2
   exit 1
 fi
+
+if ! [ -x "$(command -v snap)" ]; then
+  echo 'Instale o snap.' >&2
+  exit 1
+fi
+
 echo "Iniciando a instalação..."
 
 # Instalações via flathub
@@ -56,14 +62,25 @@ sudo apt-get install nodejs
 npm install -g @vue/cli
 sudo apt-get install mysql-server
 sudo apt-get install gparted
+sudo apt-get install gnome-tweak-tool
 
 # Instalações snap
-sudo apt install snapd
 sudo snap install zenkit
 sudo snap install brave
 sudo snap install onlyoffice-desktopeditors
 sudo snap install screenkey --beta
 sudo snap install mysql-workbench-community
+
+# Scripts adicionais
+chmod +x config-git.sh
+chmod +x config-vscode.sh
+chmod +x config-zsh.sh
+./config-git
+./config-vscode
+./config-zsh
+
+echo "TÁ TUDO PRONTO. UHUUUU"
+
 
 
 
