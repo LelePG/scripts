@@ -36,6 +36,7 @@ flatpak install flathub org.audacityteam.Audacity -y
 flatpak install flathub org.kde.kdenlive -y
 flatpak install flathub com.obsproject.Studio -y
 flatpak install flathub com.uploadedlobster.peek -y
+flatpak install flathub org.gimp.GIMP -y
 
 #Internet
 flatpak install flathub org.chromium.Chromium -y
@@ -80,12 +81,8 @@ sudo snap install mysql-workbench-community
 chmod +x config-git.sh
 chmod +x config-vscode.sh
 chmod +x config-zsh.sh
-./config-vscode
-./config-zsh
-./config-git
 
-echo "TÁ TUDO PRONTO. UHUUUU"
-
+echo "OS PROGRAMAS ESTÃO PRONTOS UHUUUUUU!!!"
 
 
 
