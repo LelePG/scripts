@@ -35,11 +35,8 @@ flatpak install flathub net.scribus.Scribus -y
 flatpak install flathub org.audacityteam.Audacity -y
 flatpak install flathub org.kde.kdenlive -y
 flatpak install flathub com.obsproject.Studio -y
-flatpak install flathub com.uploadedlobster.peek -y
-flatpak install flathub org.gimp.GIMP -y
 
 #Internet
-flatpak install flathub org.chromium.Chromium -y
 flatpak install flathub org.deluge_torrent.deluge -y
 flatpak install flathub com.stremio.Stremio -y
 
@@ -61,14 +58,14 @@ flatpak install flathub com.stepmania.StepMania -y
 
 # Instalações via apt
 sudo apt-get update
-sudo apt-get install nodejs
-sudo apt-get install mysql-server
-sudo apt-get install gparted
-sudo apt-get install gnome-tweak-tool
+sudo apt-get install nodejs -y
+sudo apt-get install npm -y
+sudo apt-get install mysql-server -y
+sudo apt-get install gnome-tweak-tool -y
 
 # Instalações npm
-npm install --global gulp-cli
-npm install -g @vue/cli
+sudo npm install --global gulp-cli
+sudo npm install -g @vue/cli
 
 # Instalações snap
 sudo snap install zenkit
@@ -76,6 +73,8 @@ sudo snap install brave
 sudo snap install onlyoffice-desktopeditors
 sudo snap install screenkey --beta
 sudo snap install mysql-workbench-community
+sudo snap install chromium
+
 
 # Scripts adicionais
 chmod +x config-git.sh
