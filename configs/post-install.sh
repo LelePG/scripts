@@ -33,6 +33,7 @@ flatpak install flathub net.scribus.Scribus -y
 
 # Video e Audio
 flatpak install flathub org.audacityteam.Audacity -y
+flatpak install flathub org.videolan.VLC -y
 flatpak install flathub org.kde.kdenlive -y
 flatpak install flathub com.obsproject.Studio -y
 
