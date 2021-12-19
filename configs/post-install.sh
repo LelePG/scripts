@@ -62,6 +62,8 @@ sudo apt-get install nodejs -y
 sudo apt-get install npm -y
 sudo apt-get install mysql-server -y
 sudo apt-get install gnome-tweak-tool -y
+sudo apt-get install peek -y
+sudo apt-get install chrome-gnome-shell -y
 
 # Instalações npm
 sudo npm install --global gulp-cli
