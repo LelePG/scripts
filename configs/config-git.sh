@@ -1,10 +1,10 @@
 read -p "Nome: " NOME
 read -p "E-mail: " EMAIL
 
-sudo apt-get install git
+#sudo apt-get install git
 
 # Configuração de credenciais
-git config --global user.name $NOME
+git config --global user.name "$NOME"
 git config --global user.email $EMAIL
 
 # Chave SSH
