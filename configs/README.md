@@ -9,6 +9,7 @@ Esta pasta contém os scripts de pós formatação e configuração de programas
 ## Coisas extras que devem ser instaladas manualmente
 * Virtual Box
 * Driver da impressora
+* Visual Studio Code (é uma melhor opção baixar a versão diretamente do site da microsoft)
 
 ## Confiurações extras que precisam ser feitas
 * Importação de favoritos nos navegadores

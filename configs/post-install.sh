@@ -18,7 +18,6 @@ echo "Iniciando a instalação..."
 flatpak install flathub org.octave.Octave -y
 flatpak install flathub net.sonic_pi.SonicPi -y
 flatpak install flathub cc.arduino.arduinoide -y
-flatpak install flathub com.visualstudio.code -y
 flatpak install flathub com.getpostman.Postman -y
 
 # Social
