@@ -10,6 +10,7 @@ Esta pasta contém os scripts de pós formatação e configuração de programas
 * Virtual Box
 * Driver da impressora
 * Visual Studio Code (é uma melhor opção baixar a versão diretamente do site da microsoft)
+* Extensões Caffeine, Panel OSD e Sound Device Input/Output Chosser
 
 ## Confiurações extras que precisam ser feitas
 * Importação de favoritos nos navegadores

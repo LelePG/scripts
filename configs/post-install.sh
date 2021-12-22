@@ -58,8 +58,8 @@ flatpak install flathub com.stepmania.StepMania -y
 
 # Instalações via apt
 sudo apt-get update
-sudo apt-get install nodejs -y
-sudo apt-get install npm -y
+sudo apt-get install nodejs -y # precisa ser modificado pra baixar a versão atual do site
+sudo apt-get install npm -y # verificar como que fica com a atualização do node
 sudo apt-get install mysql-server -y
 sudo apt-get install gnome-tweak-tool -y
 sudo apt-get install peek -y
