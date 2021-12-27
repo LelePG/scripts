@@ -5,3 +5,4 @@
 * instalar lutris
 * clone dos repositórios do Github que eu preciso ter na máquina
 * instalar traceroute
+* montar os discos de armazenamento externo
