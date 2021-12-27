@@ -1,7 +1,10 @@
+#!/bin/bash
 read -p "Nome: " NOME
 read -p "E-mail: " EMAIL
 
-#sudo apt-get install git
+if ! [ -x "$(command -v git)" ]; then
+  sudo apt-get install git
+fi
 
 # Configuração de credenciais
 git config --global user.name "$NOME"

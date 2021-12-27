@@ -1,3 +1,4 @@
+#!bin/bash
 echo "Nao use extensões!!"
 read -p "Arquivo de entrada: " ENTRADA
 read -p "Arquivo de saida: " SAIDA
