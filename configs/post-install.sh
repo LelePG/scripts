@@ -65,9 +65,6 @@ sudo apt-get install gnome-tweak-tool -y
 sudo apt-get install peek -y
 sudo apt-get install chrome-gnome-shell -y
 
-# Instalações npm
-sudo npm install --global gulp-cli
-sudo npm install -g @vue/cli
 
 # Instalações snap
 sudo snap install zenkit
@@ -76,7 +73,6 @@ sudo snap install onlyoffice-desktopeditors
 sudo snap install screenkey --beta
 sudo snap install mysql-workbench-community
 sudo snap install chromium
-
 
 # Scripts adicionais
 chmod +x config-git.sh
