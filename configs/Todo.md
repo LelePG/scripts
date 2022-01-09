@@ -7,6 +7,8 @@
 * instalar traceroute
 * montar os discos de armazenamento externo
 * instalar vetur
-* instalar vue, gulp e angular
+* instalar vue, gulp, typescript e angular
 * montar o script de instalação de coisas do node
 * fazer com que o script de post install execute os demais scripts
+* PHP
+* unrar
