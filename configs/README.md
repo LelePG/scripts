@@ -4,7 +4,9 @@ Esta pasta contém os scripts de pós formatação e configuração de programas
 * **config-git** -> faz o download do Github, configura o usuário local e gera as chaves ssh
 * **config-vscode** -> instala extensões do Visual Studio Code
 * **config-zsh** -> instala o zsh e instala o tema que eu gosto de usar
+* **config-node** -> instala o node e os pacotes que eu utilizo
 * **post-install** -> instala todos os programas que eu utilizo na máquina
+* **cloando-repos** -> repositórios que eu mais utilizo e que preciso ter na minha máquina
 
 
 ## Coisas extras que devem ser instaladas manualmente no caso de uma formatação

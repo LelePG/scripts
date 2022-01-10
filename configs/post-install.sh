@@ -68,7 +68,6 @@ sudo apt-get install traceroute -y
 sudo apt-get install unrar -y
 sudo apt-get install lutris -y
 
-
 # Instalações snap
 sudo snap install zenkit
 sudo snap install brave
@@ -82,10 +81,7 @@ chmod +x config-git.sh
 chmod +x config-vscode.sh
 chmod +x config-zsh.sh
 chmod +x config-node.sh
-
-./config-git.sh
-./config-node.sh
-./config-zsh.sh
+chmod +x clonando-repos.sh
 
 echo "OS PROGRAMAS ESTÃO PRONTOS UHUUUUUU!!!"
 
