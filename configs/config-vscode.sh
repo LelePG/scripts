@@ -14,3 +14,4 @@ code --install-extension usernamehw.errorlens
 code --install-extension rangav.vscode-thunder-client
 code --install-extension platformio.platformio-ide
 code --install-extension esbenp.prettier-vscode
+code --install-extension octref.vetur
