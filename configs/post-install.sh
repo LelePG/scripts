@@ -46,7 +46,6 @@ flatpak install flathub com.github.phase1geo.minder -y
 flatpak install flathub org.gnome.gitlab.somas.Apostrophe -y
 flatpak install flathub com.github.johnfactotum.Foliate -y
 flatpak install flathub nz.mega.MEGAsync -y
-flatpak install flathub com.github.robertsanseries.ciano -y
 flatpak install flathub org.gnome.Extensions -y
 
 # Jogos
@@ -57,13 +56,17 @@ flatpak install flathub io.mgba.mGBA -y
 flatpak install flathub com.stepmania.StepMania -y
 
 # Instalações via apt
+sudo add-apt-repository ppa:lutris-team/lutris #adiciona lutris aos repositórios
 sudo apt-get update
-sudo apt-get install nodejs -y # precisa ser modificado pra baixar a versão atual do site
-sudo apt-get install npm -y # verificar como que fica com a atualização do node
+sudo apt-get install php -y
 sudo apt-get install mysql-server -y
 sudo apt-get install gnome-tweak-tool -y
 sudo apt-get install peek -y
 sudo apt-get install chrome-gnome-shell -y
+sudo apt-get install gparted -y
+sudo apt-get install traceroute -y
+sudo apt-get install unrar -y
+sudo apt-get install lutris -y
 
 
 # Instalações snap
@@ -78,6 +81,11 @@ sudo snap install chromium
 chmod +x config-git.sh
 chmod +x config-vscode.sh
 chmod +x config-zsh.sh
+chmod +x config-node.sh
+
+./config-git.sh
+./config-node.sh
+./config-zsh.sh
 
 echo "OS PROGRAMAS ESTÃO PRONTOS UHUUUUUU!!!"
 
