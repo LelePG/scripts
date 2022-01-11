@@ -67,6 +67,7 @@ sudo apt-get install gparted -y
 sudo apt-get install traceroute -y
 sudo apt-get install unrar -y
 sudo apt-get install lutris -y
+sudo apt-get install lm-sensors -y
 
 # Instalações snap
 sudo snap install zenkit
