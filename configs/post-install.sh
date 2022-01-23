@@ -77,6 +77,9 @@ sudo snap install screenkey --beta
 sudo snap install mysql-workbench-community
 sudo snap install chromium
 
+# configuração do mysql server, deixei por último porque pareceu melhor
+sudo mysql_secure_installation 
+
 # Scripts adicionais
 chmod +x config-git.sh
 chmod +x config-vscode.sh

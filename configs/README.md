@@ -22,3 +22,4 @@ Esta pasta contém os scripts de pós formatação e configuração de programas
 * O script config-vscode.sh deve ser rodado diretamente dentro do Visual Studio Code, para que as extensões sejam instaladas.
 * O script config-git.sh vai imprimir a chave ssh que deve ser colocada na conta do Github.
 * É preciso baixar packs de músicas do site do stepmania e configurá-los depois
+* [ERRO 1698 (28000): acesso negado para o usuário 'root' @ 'localhost'](https://qastack.com.br/programming/39281594/error-1698-28000-access-denied-for-user-rootlocalhost) A primeira resposta soluciona o problema.
