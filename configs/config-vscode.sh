@@ -15,3 +15,7 @@ code --install-extension rangav.vscode-thunder-client
 code --install-extension platformio.platformio-ide
 code --install-extension esbenp.prettier-vscode
 code --install-extension octref.vetur
+code --install-extension BeardedBear.beardedtheme
+code --install-extension aaronpowell.vscode-profile-switcher
+code --install-extension bradlc.vscode-tailwindcss
+
