@@ -13,73 +13,86 @@ fi
 
 echo "Iniciando a instalação..."
 
-# Instalações via flathub
-# Dev
-flatpak install flathub org.octave.Octave -y
-flatpak install flathub net.sonic_pi.SonicPi -y
-flatpak install flathub cc.arduino.arduinoide -y
-flatpak install flathub com.getpostman.Postman -y
+PROGRAMAS_FLATPAK=(
+org.octave.Octave
+cc.arduino.arduinoide
+#net.sonic_pi.SonicPi
+com.getpostman.Postman
+com.getferdi.Ferdi
+nl.hjdskes.gcolor3
+org.flameshot.Flameshot
+org.audacityteam.Audacity
+org.videolan.VLC
+org.kde.kdenlive
+com.obsproject.Studio
+org.deluge_torrent.deluge
+#com.stremio.Stremio
+com.spotify.Client
+org.gnome.gitlab.somas.Apostrophe
+org.gnome.Extensions
+io.github.mpobaschnig.Vaults
+#org.supertuxproject.SuperTux
+net.supertuxkart.SuperTuxKart
+#org.desmume.DeSmuME
+#io.mgba.mGBA
+com.stepmania.StepMania
+)
 
-# Social
-flatpak install flathub com.discordapp.Discord -y
-flatpak install flathub org.telegram.desktop -y
+PROGRAMAS_APT=(
+php
+mysql-server
+gnome-tweak-tool
+peek
+gparted
+traceroute
+unrar
+lutris
+lm-sensors
+net-tools
+)
 
-# Graficos
-flatpak install flathub nl.hjdskes.gcolor3 -y
-flatpak install flathub org.flameshot.Flameshot -y
-flatpak install flathub org.inkscape.Inkscape -y
-flatpak install flathub net.scribus.Scribus -y
+PROGRAMAS_SNAP=(
+pomatez
+brave
+mysql-workbench-community
+chromium
+)
 
-# Video e Audio
-flatpak install flathub org.audacityteam.Audacity -y
-flatpak install flathub org.videolan.VLC -y
-flatpak install flathub org.kde.kdenlive -y
-flatpak install flathub com.obsproject.Studio -y
 
-#Internet
-flatpak install flathub org.deluge_torrent.deluge -y
-flatpak install flathub com.stremio.Stremio -y
+#Instalação dos programas flatpak
+for programa in ${PROGRAMAS_FLATPAK[@]}; do
+  if ! dpkg -l | grep -q $programa; then # Só instala se já não estiver instalado
+    flatpak install flathub "$nome_do_programa" -y > /dev/null
+    echo "[INSTALANDO] - $nome_do_programa"
+  else
+    echo "[JÁ EXISTE] - $nome_do_programa"
+  fi
+done
 
-# Outros
-flatpak install flathub com.spotify.Client -y
-flatpak install flathub com.github.phase1geo.minder -y
-flatpak install flathub org.gnome.gitlab.somas.Apostrophe -y
-flatpak install flathub com.github.johnfactotum.Foliate -y
-flatpak install flathub nz.mega.MEGAsync -y
-flatpak install flathub org.gnome.Extensions -y
+sudo su # muda para o super usuario já que vou precisar do sudo pros comandos abaixo
+add-apt-repository ppa:lutris-team/lutris #adiciona lutris aos repositórios
 
-# Jogos
-flatpak install flathub org.supertuxproject.SuperTux -y
-flatpak install flathub net.supertuxkart.SuperTuxKart -y
-flatpak install flathub org.desmume.DeSmuME -y
-flatpak install flathub io.mgba.mGBA -y
-flatpak install flathub com.stepmania.StepMania -y
+#Instalação dos programas apt
+for programa in ${PROGRAMAS_APT[@]}; do
+  if ! dpkg -l | grep -q $programa; then # Só instala se já não estiver instalado
+    apt install "$nome_do_programa" -y > /dev/null
+    echo "[INSTALANDO] - $nome_do_programa"
+  else
+    echo "[JÁ EXISTE] - $nome_do_programa"
+  fi
+done
 
-# Instalações via apt
-sudo add-apt-repository ppa:lutris-team/lutris #adiciona lutris aos repositórios
-sudo apt-get update
-sudo apt-get install php -y
-sudo apt-get install mysql-server -y
-sudo apt-get install gnome-tweak-tool -y
-sudo apt-get install peek -y
-sudo apt-get install chrome-gnome-shell -y
-sudo apt-get install gparted -y
-sudo apt-get install traceroute -y
-sudo apt-get install unrar -y
-sudo apt-get install lutris -y
-sudo apt-get install lm-sensors -y
-sudo apt-get install net-tools -y
+#Instalação dos programas snap
+for programa in ${PROGRAMAS_SNAP[@]}; do
+  if ! dpkg -l | grep -q $programa; then # Só instala se já não estiver instalado
+    apt install "$nome_do_programa" -y > /dev/null
+   echo "[INSTALANDO] - $nome_do_programa"
+  else
+    echo "[JÁ EXISTE] - $nome_do_programa"
+  fi
+done
 
-# Instalações snap
-sudo snap install zenkit
-sudo snap install brave
-sudo snap install onlyoffice-desktopeditors
-sudo snap install screenkey --beta
-sudo snap install mysql-workbench-community
-sudo snap install chromium
-
-# configuração do mysql server, deixei por último porque pareceu melhor
-sudo mysql_secure_installation 
+mysql_secure_installation 
 
 # Scripts adicionais
 chmod +x config-git.sh
