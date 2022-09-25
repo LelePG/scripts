@@ -11,7 +11,18 @@ if ! [ -x "$(command -v snap)" ]; then
   exit 1
 fi
 
-echo "Iniciando a instalação..."
+if ! [ -x "$(command -v espeak)" ]; then
+  sudo apt-get install espeak #mensagens de audio que serão usadas durante a instalação
+fi
+
+
+function notificacao(){
+  echo $*
+  espeak -s 150 -v pt+f4 " $*"
+  notify-send " $*"
+}
+
+notificacao "Iniciando"
 
 
 #Comentários de programas que não vou instalar
@@ -75,6 +86,7 @@ for programa in ${PROGRAMAS_FLATPAK[@]}; do
     echo "[JÁ EXISTE] - $programa"
   fi
 done
+notificacao "Programas Flatpak instalados. Insira a senha pra instalações a p t."
 
 #add-apt-repository ppa:lutris-team/lutris #adiciona lutris aos repositórios
 
@@ -88,6 +100,7 @@ for programa in ${PROGRAMAS_APT[@]}; do
   fi
 done
 
+notificacao "Programas a p t instalados. Insira a senha pra instalações isnépi."
 #Instalação dos programas snap
 for programa in ${PROGRAMAS_SNAP[@]}; do
   if ! snap list | grep -q $programa; then # Só instala se já não estiver instalado
@@ -98,6 +111,9 @@ for programa in ${PROGRAMAS_SNAP[@]}; do
   fi
 done
 
+notificacao "Programas isnépi instalados. Vamos para os próximos script."
+
+
 #mysql_secure_installation 
 
 # Scripts adicionais
@@ -107,7 +123,18 @@ chmod +x config-zsh.sh
 chmod +x config-node.sh
 chmod +x clonando-repos.sh
 
+notificacao "Hora de configurar o Guit"
+#./config-git
+notificacao "Hora de configurar o node"
+#./config-node
+notificacao "Hora de configurar o terminal"
+#./config-zsh
+notificacao "Hora de configurar o vs code"
+#./config-vscode
+
+
 echo "OS PROGRAMAS ESTÃO PRONTOS UHUUUUUU!!!"
+espeak -s 150 -v pt+f4 'Tudo pronto'
 
 
 
