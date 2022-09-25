@@ -13,12 +13,17 @@ fi
 
 echo "Iniciando a instalação..."
 
-PROGRAMAS_FLATPAK=(
+
+#Comentários de programas que não vou instalar
 #org.octave.Octave
-cc.arduino.arduinoide
 #net.sonic_pi.SonicPi
+#com.stremio.Stremio
+#org.supertuxproject.SuperTux
+#org.desmume.DeSmuME
+#io.mgba.mGBA
+PROGRAMAS_FLATPAK=(
+cc.arduino.arduinoide
 com.getpostman.Postman
-#com.getferdi.Ferdi
 nl.hjdskes.gcolor3
 org.flameshot.Flameshot
 org.audacityteam.Audacity
@@ -26,21 +31,18 @@ org.videolan.VLC
 org.kde.kdenlive
 com.obsproject.Studio
 org.deluge_torrent.deluge
-#com.stremio.Stremio
 com.spotify.Client
 org.gnome.gitlab.somas.Apostrophe
 org.gnome.Extensions
 io.github.mpobaschnig.Vaults
-#org.supertuxproject.SuperTux
 net.supertuxkart.SuperTuxKart
-#org.desmume.DeSmuME
-#io.mgba.mGBA
 com.stepmania.StepMania
 com.discordapp.Discord
 org.telegram.desktop
 org.kicad.KiCad
 )
 
+#lutris
 PROGRAMAS_APT=(
 php
 mysql-server
@@ -49,11 +51,11 @@ peek
 gparted
 traceroute
 unrar
-#lutris
 lm-sensors
 net-tools
 postgresql
 nodejs
+gocryptfs
 )
 
 PROGRAMAS_SNAP=(
@@ -66,38 +68,37 @@ chromium
 
 #Instalação dos programas flatpak
 for programa in ${PROGRAMAS_FLATPAK[@]}; do
-  if ! dpkg -l | grep -q $programa; then # Só instala se já não estiver instalado
-    flatpak install flathub "$nome_do_programa" -y > /dev/null
-    echo "[INSTALANDO] - $nome_do_programa"
+  if ! flatpak list | grep -q $programa; then # Só instala se já não estiver instalado
+    echo "[INSTALANDO] - $programa"
+    flatpak install flathub "$programa" -y >>2 log.txt
   else
-    echo "[JÁ EXISTE] - $nome_do_programa"
+    echo "[JÁ EXISTE] - $programa"
   fi
 done
 
-sudo su # muda para o super usuario já que vou precisar do sudo pros comandos abaixo
-add-apt-repository ppa:lutris-team/lutris #adiciona lutris aos repositórios
+#add-apt-repository ppa:lutris-team/lutris #adiciona lutris aos repositórios
 
 #Instalação dos programas apt
 for programa in ${PROGRAMAS_APT[@]}; do
   if ! dpkg -l | grep -q $programa; then # Só instala se já não estiver instalado
-    apt install "$nome_do_programa" -y > /dev/null
-    echo "[INSTALANDO] - $nome_do_programa"
+    echo "[INSTALANDO] - $programa"
+    sudo apt-get install "$programa"  2>> log.txt
   else
-    echo "[JÁ EXISTE] - $nome_do_programa"
+    echo "[JÁ EXISTE] - $programa"
   fi
 done
 
 #Instalação dos programas snap
 for programa in ${PROGRAMAS_SNAP[@]}; do
-  if ! dpkg -l | grep -q $programa; then # Só instala se já não estiver instalado
-    apt install "$nome_do_programa" -y > /dev/null
-   echo "[INSTALANDO] - $nome_do_programa"
+  if ! snap list | grep -q $programa; then # Só instala se já não estiver instalado
+    sudo snap install "$programa"  2>> log.txt
+    echo "[INSTALANDO] - $programa"
   else
-    echo "[JÁ EXISTE] - $nome_do_programa"
+    echo "[JÁ EXISTE] - $programa"
   fi
 done
 
-mysql_secure_installation 
+#mysql_secure_installation 
 
 # Scripts adicionais
 chmod +x config-git.sh
