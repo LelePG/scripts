@@ -14,11 +14,11 @@ fi
 echo "Iniciando a instalação..."
 
 PROGRAMAS_FLATPAK=(
-org.octave.Octave
+#org.octave.Octave
 cc.arduino.arduinoide
 #net.sonic_pi.SonicPi
 com.getpostman.Postman
-com.getferdi.Ferdi
+#com.getferdi.Ferdi
 nl.hjdskes.gcolor3
 org.flameshot.Flameshot
 org.audacityteam.Audacity
@@ -36,6 +36,9 @@ net.supertuxkart.SuperTuxKart
 #org.desmume.DeSmuME
 #io.mgba.mGBA
 com.stepmania.StepMania
+com.discordapp.Discord
+org.telegram.desktop
+org.kicad.KiCad
 )
 
 PROGRAMAS_APT=(
@@ -46,9 +49,10 @@ peek
 gparted
 traceroute
 unrar
-lutris
+#lutris
 lm-sensors
 net-tools
+postgresql
 )
 
 PROGRAMAS_SNAP=(
