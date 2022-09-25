@@ -53,6 +53,7 @@ unrar
 lm-sensors
 net-tools
 postgresql
+nodejs
 )
 
 PROGRAMAS_SNAP=(
