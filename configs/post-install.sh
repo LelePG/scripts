@@ -25,15 +25,8 @@ function notificacao(){
 notificacao "Iniciando"
 
 
-#Comentários de programas que não vou instalar
-#org.octave.Octave
-#net.sonic_pi.SonicPi
-#com.stremio.Stremio
-#org.supertuxproject.SuperTux
-#org.desmume.DeSmuME
-#io.mgba.mGBA
 PROGRAMAS_FLATPAK=(
-cc.arduino.arduinoide
+cc.arduino.IDE2
 com.getpostman.Postman
 nl.hjdskes.gcolor3
 org.flameshot.Flameshot
@@ -43,14 +36,21 @@ org.kde.kdenlive
 com.obsproject.Studio
 org.deluge_torrent.deluge
 com.spotify.Client
-org.gnome.gitlab.somas.Apostrophe
 org.gnome.Extensions
 io.github.mpobaschnig.Vaults
 net.supertuxkart.SuperTuxKart
 com.stepmania.StepMania
 com.discordapp.Discord
-org.telegram.desktop
 org.kicad.KiCad
+com.github.k4zmu2a.spacecadetpinball
+com.github.suzie97.communique
+com.lakoliu.Furtherance
+io.github.Qalculate
+io.github.lainsce.Emulsion
+io.github.slgobinath.SafeEyes
+io.posidon.Paper
+md.obsidian.Obsidian
+org.kde.ktouch 
 )
 
 #lutris
@@ -74,6 +74,8 @@ pomatez
 brave
 mysql-workbench-community
 chromium
+stacer 
+zenkit
 )
 
 
@@ -123,13 +125,13 @@ chmod +x config-zsh.sh
 chmod +x config-node.sh
 chmod +x clonando-repos.sh
 
-notificacao "Hora de configurar o Guit"
+# notificacao "Hora de configurar o Guit"
 #./config-git
-notificacao "Hora de configurar o node"
+# notificacao "Hora de configurar o node"
 #./config-node
-notificacao "Hora de configurar o terminal"
+# notificacao "Hora de configurar o terminal"
 #./config-zsh
-notificacao "Hora de configurar o vs code"
+# notificacao "Hora de configurar o vs code"
 #./config-vscode
 
 

@@ -5,9 +5,7 @@
 sudo apt-get install -y nodejs
 
 npm install -g @vue/cli
-npm install -g @angular/cli
 npm install -g typescript
-npm install -g gulp-cli
 npm install -g n
 
 
