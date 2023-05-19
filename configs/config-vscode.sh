@@ -12,13 +12,13 @@ alexandernanberg.horizon-theme-vscode
 formulahendry.code-runner
 usernamehw.errorlens
 rangav.vscode-thunder-client
-platformio.platformio-ide
 esbenp.prettier-vscode
 Vue.volar
 BeardedBear.beardedtheme
 Syler.sass-indented
 bradlc.vscode-tailwindcss
 oderwat.indent-rainbow
+mongodb.mongodb-vscode
 )
 
 
