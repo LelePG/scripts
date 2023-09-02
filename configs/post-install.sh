@@ -42,15 +42,15 @@ net.supertuxkart.SuperTuxKart
 com.stepmania.StepMania
 com.discordapp.Discord
 org.kicad.KiCad
+md.obsidian.Obsidian
 com.github.k4zmu2a.spacecadetpinball
-com.github.suzie97.communique
 com.lakoliu.Furtherance
+io.github.Figma_Linux.figma_linux
 io.github.Qalculate
 io.github.lainsce.Emulsion
 io.github.slgobinath.SafeEyes
-io.posidon.Paper
-md.obsidian.Obsidian
 org.kde.ktouch 
+flatpak install flathub me.hyliu.fluentreader
 )
 
 #lutris
@@ -70,7 +70,6 @@ gocryptfs
 )
 
 PROGRAMAS_SNAP=(
-pomatez
 brave
 mysql-workbench-community
 chromium

@@ -2,7 +2,6 @@
 
 # Extensões que eu costumo usar
 EXTENSOES=(
-eamodio.gitlens
 mhutchie.git-graph
 pnp.polacode
 PKief.material-icon-theme
@@ -13,7 +12,6 @@ formulahendry.code-runner
 usernamehw.errorlens
 rangav.vscode-thunder-client
 esbenp.prettier-vscode
-Vue.volar
 BeardedBear.beardedtheme
 Syler.sass-indented
 bradlc.vscode-tailwindcss

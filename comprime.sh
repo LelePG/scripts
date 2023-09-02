@@ -1,4 +1,3 @@
-#!bin/bash
 echo "Não coloque extensões nos nomes dos arquivos!!"
 read -p "Arquivo de entrada: " ENTRADA
 read -p "Arquivo de saida: " SAIDA
