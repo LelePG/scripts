@@ -27,30 +27,29 @@ notificacao "Iniciando"
 
 PROGRAMAS_FLATPAK=(
 cc.arduino.IDE2
-com.getpostman.Postman
 nl.hjdskes.gcolor3
 org.flameshot.Flameshot
-org.audacityteam.Audacity
-org.videolan.VLC
 org.kde.kdenlive
 com.obsproject.Studio
 org.deluge_torrent.deluge
 com.spotify.Client
-org.gnome.Extensions
-io.github.mpobaschnig.Vaults
 net.supertuxkart.SuperTuxKart
 com.stepmania.StepMania
 com.discordapp.Discord
 org.kicad.KiCad
 md.obsidian.Obsidian
 com.github.k4zmu2a.spacecadetpinball
-com.lakoliu.Furtherance
 io.github.Figma_Linux.figma_linux
 io.github.Qalculate
-io.github.lainsce.Emulsion
-io.github.slgobinath.SafeEyes
-org.kde.ktouch 
-flatpak install flathub me.hyliu.fluentreader
+com.brave.Browser
+org.chromium.Chromium
+org.gnome.Boxes
+io.github.shiftey.Desktop
+io.github.flattool.Warehouse
+com.mongodb.Compass
+io.typora.Typora
+org.fritzing.Fritzing
+flathub app.drey.Dialect
 )
 
 #lutris
@@ -70,9 +69,7 @@ gocryptfs
 )
 
 PROGRAMAS_SNAP=(
-brave
 mysql-workbench-community
-chromium
 stacer 
 zenkit
 )

@@ -3,8 +3,6 @@
 # Extensões que eu costumo usar
 EXTENSOES=(
 mhutchie.git-graph
-pnp.polacode
-PKief.material-icon-theme
 MS-vsliveshare.vsliveshare
 ritwickdey.LiveServer
 alexandernanberg.horizon-theme-vscode
@@ -13,7 +11,7 @@ usernamehw.errorlens
 rangav.vscode-thunder-client
 esbenp.prettier-vscode
 BeardedBear.beardedtheme
-Syler.sass-indented
+firsttris.vscode-jest-runner
 bradlc.vscode-tailwindcss
 oderwat.indent-rainbow
 mongodb.mongodb-vscode
