@@ -47,4 +47,4 @@ with open(args.ARQUIVO_CSV) as csvfile:
             arquivo.write(copiaTexto)
 
         numero += 1
-        print(copiaTexto)
+
