@@ -1,8 +1,5 @@
 #!/bin/bash
-
-
 pasta_principal="$PWD"
-
 
 # Verifique se a pasta inicial existe
 if [ -d "$pasta_principal" ]; then
