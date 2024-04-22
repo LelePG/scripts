@@ -40,22 +40,23 @@ org.kicad.KiCad
 md.obsidian.Obsidian
 com.github.k4zmu2a.spacecadetpinball
 io.github.Figma_Linux.figma_linux
-io.github.Qalculate
-com.brave.Browser
+#io.github.Qalculate
+#com.brave.Browser
 org.chromium.Chromium
 org.gnome.Boxes
-io.github.shiftey.Desktop
+#io.github.shiftey.Desktop
 io.github.flattool.Warehouse
-com.mongodb.Compass
-io.typora.Typora
-org.fritzing.Fritzing
-flathub app.drey.Dialect
+#com.mongodb.Compass
+#io.typora.Typora
+#org.fritzing.Fritzing
+com.github.tchx84.Flatseal
+re.sonny.Junction
 )
 
 #lutris
 PROGRAMAS_APT=(
 php
-mysql-server
+#mysql-server
 gnome-tweak-tool
 peek
 gparted
@@ -63,15 +64,16 @@ traceroute
 unrar
 lm-sensors
 net-tools
-postgresql
-nodejs
-gocryptfs
+#postgresql
+#nodejs
+#gocryptfs
 )
 
 PROGRAMAS_SNAP=(
 mysql-workbench-community
-stacer 
-zenkit
+#stacer
+guvcview 
+#zenkit
 )
 
 

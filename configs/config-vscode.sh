@@ -5,7 +5,6 @@ EXTENSOES=(
 mhutchie.git-graph
 MS-vsliveshare.vsliveshare
 ritwickdey.LiveServer
-alexandernanberg.horizon-theme-vscode
 formulahendry.code-runner
 usernamehw.errorlens
 rangav.vscode-thunder-client
@@ -14,7 +13,9 @@ BeardedBear.beardedtheme
 firsttris.vscode-jest-runner
 bradlc.vscode-tailwindcss
 oderwat.indent-rainbow
-mongodb.mongodb-vscode
+GitHub.copilot
+GitHub.copilot-chat
+johnpapa.vscode-peacock
 )
 
 
