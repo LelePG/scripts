@@ -1,0 +1,12 @@
+Email: ${email}
+Assunto: O Evento está chegando 🎉
+
+Olá ${nome}, tudo bem?
+
+O evento está chegando, e eu quero conferir algumas informações:
+
+- O título da sua palestra: "${titulo}"
+- A descrição da sua palestra: "${resumo}"
+- A sua mini-bio: "${mini-bio}"
+
+É isso :)

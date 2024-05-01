@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 
 """
-    Script para automatizar a escrita de e-mails para eventos. 
+    Script para automatizar a escrita de e-mails. 
     Inputs necessários: 
     - um arquivo de texto com o modelo do texto
     - um arquivo csv com os dados a serem utilizados
     As chaves de substituição do texto devem estar no formato ${nome-coluna}
     Importante: nome-coluna deve ser exatamente o nome da coluna onde aquela informação está armazenada no arquivo csv
     Outputs: Arquivos com o texto do modelo adaptado e nomes compostos de um prefixo a ser definido e um número
-    Exemplo de chamada: python3 gera_emails.py modelo.txt arquivo.csv 'resultado' 
+    Exemplo de chamada: python3 gera_emails.py modelo-exemplo.txt planilha-exemplo.csv resultado 
     Definição de alias (deve ser feita no arquivo .zshrc ou .bashrc): alias gera_emails='python3 ~/scripts/gera_emails.py'
 """
 import csv
