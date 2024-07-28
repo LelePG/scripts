@@ -1,18 +1,14 @@
-import os
-from dotenv import load_dotenv
 from datetime import datetime, timedelta
 
-
-load_dotenv()
-
-class Post:
-    def __init__(self):
-        self.EVENTO = os.getenv('EVENTO')
-        self.LINK_INSCRICAO = os.getenv('LINK_INSCRICAO')
-        self.LOCAL = os.getenv('LOCAL')
-        self.DATA = os.getenv('DATA')
-        self.HORA = os.getenv('HORA')
-        self.HASHTAGS = os.getenv('HASHTAGS')
+class PostFactory:
+    def __init__(self, evento, link_inscricao, local, data, hora, hashtags, caminho_output):
+        self.EVENTO = evento
+        self.LINK_INSCRICAO = link_inscricao
+        self.LOCAL = local
+        self.DATA = data
+        self.HORA = hora
+        self.HASHTAGS = hashtags
+        self.CAMINHO_OUTPUT = caminho_output
         self.texto = ""
 
     def comHashtags(self):
@@ -37,19 +33,19 @@ class Post:
     
 
     def comTexto(self, texto):
-        self.texto += f"{texto}\n"
+        self.texto += f"{texto}\n\n"
         return self
 
     def comLocal(self):
-        self.texto += f"📍 Local: {self.LOCAL}\n"
+        self.texto += f"📍 Local: {self.LOCAL}\n\n"
         return self
 
     def comDataHora(self):
-        self.texto += f"📅 {self.DATA} - {self.HORA}\n"
+        self.texto += f"📅 {self.DATA} - {self.HORA}\n\n"
         return self
 
     def comLinkInscricao(self):
-        self.texto += f"🔗 Inscrições: {self.LINK_INSCRICAO}\n"
+        self.texto += f"🔗 Inscrições: {self.LINK_INSCRICAO}\n\n"
         return self
 
     def comCabecalhoPadrao(self, titulo):
@@ -76,27 +72,64 @@ class Post:
     def mostrar(self):
         print(self.texto)
 
-    def salvar(self, nome_arquivo="output.txt"):
-        with open(nome_arquivo, 'a') as f:
+    def salvar(self):
+        with open(self.CAMINHO_OUTPUT, 'a') as f:
             f.write(self.texto)
+        self.texto = ""
     
-    def deFaltamDias(self, dia):
+    def gerar(self):
+        return self.texto
+    
+    def deFaltamDias(self, diasFaltantes):
         data_evento = datetime.strptime(f"{self.DATA}/2024", '%d/%m/%Y')
-        data_postagem = data_evento - timedelta(days=int(dia))
+        data_postagem = data_evento - timedelta(days=int(diasFaltantes))
         return (self
                 .comDivisorInicio()
-                .comTituloOrganizacao(f'Faltam {dia} dias')
+                .comTituloOrganizacao(f'Faltam {diasFaltantes} dias')
                 .comTexto(f"Data da postagem: {data_postagem.strftime('%d/%m/%Y')}")
                 .comDivisorIntermediario()
-                .comTexto(f"⏳ Faltam {str(dia).zfill(2)} dias para o {self.EVENTO} ")
+                .comTexto(f"⏳ Faltam {str(diasFaltantes).zfill(2)} dias para o {self.EVENTO} ")
                 .comTexto(f"O {self.EVENTO} está chegando e ainda dá tempo de garantir o seu ingresso.")
                 .comFooterInformativo()
                 )
 
+    def deEHoje(self):
+        data_postagem = datetime.strptime(f"{self.DATA}/2024", '%d/%m/%Y')
+        return (self
+                .comDivisorInicio()
+                .comTituloOrganizacao(f'É hoje!')
+                .comTexto(f"Data da postagem: {data_postagem.strftime('%d/%m/%Y')}")
+                .comDivisorIntermediario()
+                .comTexto(f"🎉 O {self.EVENTO} é hoje! ")
+                .comTexto(f"Esperamos todo mundo logo mais no {self.LOCAL} às {self.HORA}.")
+                .comFooterPadrao()
+                )
+    
+    def deEAmanha(self):
+        data_evento = datetime.strptime(f"{self.DATA}/2024", '%d/%m/%Y')
+        data_postagem = data_evento - timedelta(days=int(1))
+        return (self
+                .comDivisorInicio()
+                .comTituloOrganizacao(f'É amanhã')
+                .comTexto(f"Data da postagem: {data_postagem.strftime('%d/%m/%Y')}")
+                .comDivisorIntermediario()
+                .comTexto(f"🎉 É amanhã! ")
+                .comTexto(f"O {self.EVENTO} está chegando! Amanhã, dia {self.DATA}, te esperamos no {self.LOCAL} às {self.HORA}.")
+                .comFooterPadrao()
+                )
+
     def dePatrocinador(self, patrocinador):
         return (self
-                .comCabecalhoPadrao(f'Patrocinador {patrocinador}')
-                .comTexto(f"🤝 O {patrocinador} é um patrocinador oficial do {self.EVENTO}")
+                .comCabecalhoPadrao(f'Patrocinador {patrocinador.strip()}')
+                .comTexto(f"🤝 O {patrocinador.strip()} é um patrocinador oficial do {self.EVENTO}!")
+                .comTexto(f"Agradecemos demais por possibilitar que o {self.EVENTO} seja possível!")
+                .comFooterPadrao()
+                )
+    
+    def deApoiador(self, apoiador):
+        return (self
+                .comCabecalhoPadrao(f'Apoiador {apoiador.strip()}')
+                .comTexto(f"🤝 O {apoiador.strip()} é um apoiador oficial do {self.EVENTO}!")
                 .comTexto(f"Agradecemos demais por possibilitar que o {self.EVENTO} seja possível!")
                 .comFooterPadrao()
                 )
