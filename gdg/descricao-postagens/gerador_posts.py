@@ -11,6 +11,13 @@ def exibir_menu():
     print("7. Programação")
     print("8. É hoje")
     print("9. É amanhã")
+    print("10. Ingressos Esgotados")
+    print("11. Não esqueça seu copo")
+    print("12. Não esqueça seu alimento")
+    print("13. Save the Date")
+    print("14. Call for Papers")
+    print("15. 1º Lote com Camiseta")
+    print("16. Traga seu lixo")
     print("0. Sair")
 
 def executar_opcao(opcao):
@@ -41,9 +48,22 @@ def executar_opcao(opcao):
         Post().deEHoje().salvar()
     elif opcao == "9": # É amanhã
         Post().deEAmanha().salvar()
+    elif opcao == "10": # Ingressos Esgotados
+        Post().deIngressosEsgotados().salvar()
+    elif opcao == "11": # Não esqueça seu copo
+        Post().deNaoEsquecaCopo().salvar()
+    elif opcao == "12": # Não esqueça seu alimento
+        Post().deNaoEsquecaAlimento().salvar()
+    elif opcao == "13": # Save the Date
+        Post().deSaveTheDate().salvar()
+    elif opcao == "14": # Call for Papers
+        Post().deC4p().salvar()
+    elif opcao == "15": # 1º Lote com Camiseta
+        Post().de1loteComCamiseta().salvar()
+    elif opcao == "16": # Traga seu lixo
+        Post().deTragaSeuLixo().salvar()
     else:
         print("Opção inválida.")
-
 
 while True:
     exibir_menu()

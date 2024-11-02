@@ -48,25 +48,24 @@ class PostFactory:
         self.texto += f"🔗 Inscrições: {self.LINK_INSCRICAO}\n\n"
         return self
 
-    def comCabecalhoPadrao(self, titulo):
+    def comCabecalhoOrganizacao(self, titulo):
         return (self
                 .comDivisorInicio()
                 .comTituloOrganizacao(titulo)
                 .comDivisorIntermediario()
                 )
     
-    def comFooterPadrao(self):
+    def comFinalizacao(self):
         return (self
                 .comHashtags()
                 .comDivisorFim()
                 )
 
-    def comFooterInformativo(self):
+    def comInscricaoELocal(self):
         return (self
                 .comLinkInscricao()
                 .comDataHora()
                 .comLocal()
-                .comFooterPadrao()
                 )
     
     def mostrar(self):
@@ -90,7 +89,8 @@ class PostFactory:
                 .comDivisorIntermediario()
                 .comTexto(f"⏳ Faltam {str(diasFaltantes).zfill(2)} dias para o {self.EVENTO} ")
                 .comTexto(f"O {self.EVENTO} está chegando e ainda dá tempo de garantir o seu ingresso.")
-                .comFooterInformativo()
+                .comInscricaoELocal()
+                .comFinalizacao()
                 )
 
     def deEHoje(self):
@@ -102,7 +102,7 @@ class PostFactory:
                 .comDivisorIntermediario()
                 .comTexto(f"🎉 O {self.EVENTO} é hoje! ")
                 .comTexto(f"Esperamos todo mundo logo mais no {self.LOCAL} às {self.HORA}.")
-                .comFooterPadrao()
+                .comFinalizacao()
                 )
     
     def deEAmanha(self):
@@ -115,28 +115,28 @@ class PostFactory:
                 .comDivisorIntermediario()
                 .comTexto(f"🎉 É amanhã! ")
                 .comTexto(f"O {self.EVENTO} está chegando! Amanhã, dia {self.DATA}, te esperamos no {self.LOCAL} às {self.HORA}.")
-                .comFooterPadrao()
+                .comFinalizacao()
                 )
 
     def dePatrocinador(self, patrocinador):
         return (self
-                .comCabecalhoPadrao(f'Patrocinador {patrocinador.strip()}')
+                .comCabecalhoOrganizacao(f'Patrocinador {patrocinador.strip()}')
                 .comTexto(f"🤝 O {patrocinador.strip()} é um patrocinador oficial do {self.EVENTO}!")
                 .comTexto(f"Agradecemos demais por possibilitar que o {self.EVENTO} seja possível!")
-                .comFooterPadrao()
+                .comFinalizacao()
                 )
     
     def deApoiador(self, apoiador):
         return (self
-                .comCabecalhoPadrao(f'Apoiador {apoiador.strip()}')
+                .comCabecalhoOrganizacao(f'Apoiador {apoiador.strip()}')
                 .comTexto(f"🤝 O {apoiador.strip()} é um apoiador oficial do {self.EVENTO}!")
                 .comTexto(f"Agradecemos demais por possibilitar que o {self.EVENTO} seja possível!")
-                .comFooterPadrao()
+                .comFinalizacao()
                 )
 
     def dePalestrante(self, nome, titulo, resumo, mini_bio):
         return (self
-                .comCabecalhoPadrao(f'Palestrante {nome}')
+                .comCabecalhoOrganizacao(f'Palestrante {nome}')
                 .comTexto(f"📣 Palestra Confirmada {self.EVENTO}!")
                 .comTexto(f"⭐ {titulo}")
                 .comTexto(f"🎤 {nome}")
@@ -144,40 +144,110 @@ class PostFactory:
                 .comTexto(resumo)
                 .comTexto("📘 Bio do palestrante:")
                 .comTexto(mini_bio)
-                .comFooterInformativo()
+                .comInscricaoELocal()
+                .comFinalizacao()
                 )
 
     def deHorasComplementares(self):
         return (self
-                .comCabecalhoPadrao('Horas complementares')
+                .comCabecalhoOrganizacao('Horas complementares')
                 .comTexto("📣 Precisando de horas complementares para a faculdade?")
                 .comTexto(f"O {self.EVENTO} terá certificado de participação com a carga horária correspondente ao evento. Se você está precisando de horas complementares, não perca essa oportunidade!")
                 .comTexto(f"Te esperamos no {self.EVENTO}!")
-                .comFooterInformativo()
+                .comInscricaoELocal()
+                .comFinalizacao()
                 )
 
     def deComoChegar(self):
         return (self
-                .comCabecalhoPadrao('Como Chegar')
+                .comCabecalhoOrganizacao('Como Chegar')
                 .comTexto(f"⏳ O {self.EVENTO} está chegando!")
                 .comTexto(f"O {self.EVENTO} acontecerá dia {self.DATA} no {self.LOCAL}. ")
                 .comTexto(f"O credenciamento começa às {self.HORA} e recomendamos que você se planeje para chegar ao local do evento com antecedência para evitar transtornos.")
                 .comTexto("Tem alguma dúvida de como chegar ao local do evento? Dá uma olhadinha no nosso guia!")
-                .comFooterPadrao()
+                .comFinalizacao()
                 )
     
     def deGuiaPreparacao(self):
         return (self
-                .comCabecalhoPadrao('Guia de Preparação')
+                .comCabecalhoOrganizacao('Guia de Preparação')
                 .comTexto(f"⏳ O {self.EVENTO} está chegando!")
                 .comTexto("Não esquece de conferir o nosso guia de preparação com algumas informações importantes!")
-                .comFooterPadrao()
+                .comFinalizacao()
                 )
 
     def deProgramacao(self):
         return (self
-                .comCabecalhoPadrao('Programação')
+                .comCabecalhoOrganizacao('Programação')
                 .comTexto(f"🕖 Olha a programação do {self.EVENTO} na sua timeline!")
                 .comTexto(f"O {self.EVENTO} está chegando e a programação já está disponível! Confira as palestras incríveis que vão rolar nesse evento.")
-                .comFooterInformativo()
+                .comInscricaoELocal()
+                .comFinalizacao()
                 )
+        
+    def deIngressosEsgotados(self):
+        return self.comCabecalhoOrganizacao('Ingressos Esgotados')
+        .comTexto(f"🚨 Os ingressos para o {self.EVENTO} estão esgotados! 🚨")
+        .comTexto(f"Agradecemos imensamente a todos que garantiram sua presença. Estamos animados para compartilhar momentos incríveis com vocês no dia {self.DATA}.")
+        .comTexto(f"Nos vemos no {self.EVENTO}!")
+        .comHashtags()
+        .comFinalizacao()
+
+    def deNaoEsquecaCopo(self):
+        return (self
+                .comCabecalhoOrganizacao('Não esqueça seu copo')
+                .comTexto("🌱 Traga seu copo para o ${self.EVENTO}! 💚")
+                .comTexto("Pedimos que todos tragam seus copos reutilizáveis, pois não teremos copos descartáveis no evento.")
+                .comTexto("Assim, ajudamos a reduzir o uso de plástico e deixamos nosso evento ainda mais sustentável.")
+                .comTexto("E quem trouxer o seu copo ainda vai ganhar um brinde especial.")
+                .comTexto("Contamos com vocês!")
+                .comInscricaoELocal()
+                .comFinalizacao()
+                
+    def deNaoEsquecaAlimento(self):
+        return (self
+                .comCabecalhoOrganizacao('Não esqueça seu alimento')
+                .comTexto("🍽️ Se você optou pelo ingresso + alimento, não esqueça de levar 1kg de alimento não perecível para o evento 🍽️")
+                .comTexto("Lembramos que a entrada de quem comprou este tipo de ingresso só será permitida para aqueles que apresentarem o alimento na entrada. Contamos com a sua colaboração!")
+                .comInscricaoELocal()
+                .comFinalizacao()
+                )
+    
+    def deSaveTheDate(self):
+        return (self
+                .comCabecalhoOrganizacao('Save the Date')
+                .comTexto(f"📅 Anote na agenda!")
+                .comTexto(f"No dia {self.DATA} acontecerá o {self.EVENTO}.")
+                .comTexto(f"Fique de olho nas nossas redes para mais informações.")
+                .comFinalizacao()
+                )
+    
+
+    def deC4p(self):
+        return (self
+                .comCabecalhoOrganizacao('Call for Papers')
+                .comTexto("🎤 Que tal compartilhar seus conhecimentos sobre tecnologia com a comunidade?")
+                .comTexto("O call for papers para o {self.EVENTO} que acontecerá dia {self.DATA} em Pelotas está aberto, e essa é a sua oportunidade de compartilhar seus conhecimentos sobre tecnologia com a comunidade. Não deixe de subtemer a sua palestra, e qualquer dúvida, manda uma mensagem pra gente!")
+                .comInscricaoELocal()
+                .comFinalizacao()
+                )
+
+    def de1loteComCamiseta(self):
+        return (self
+                .comCabecalhoOrganizacao('Ingressos Abertos')
+                .comTexto("🎫 Os ingressos para o {self.EVENTO} estão abertos!")
+                .comTexto("E nesse evento, além de ter o melhor preço, os ingressos do primeiro lote tem uma novidade: agora você pode optar por um ingresso que inclui uma camiseta oficial do evento além do ingresso comum.")
+                .comTexto("Garanta logo o seu ingresso e a sua camiseta!")
+                .comInscricaoELocal()
+                .comFinalizacao()
+                )
+
+    def deTragaSeuLixo(self):
+        return (self
+                .comCabecalhoOrganizacao('Ponto de Coleta de Lixo Tecnológico')
+                .comTexto("🗑️ Ponto de Coleta de Lixo Tecnológico no DevFest Rio Grande do Sul 2024!")
+                .comTexto("Você tem algum eletrônico que não usa mais? Que tal trazê-lo para descarte no ponto de coleta do Pelotas Parque Tecnológico? Você ajuda a o meio ambiente a ainda libera um espacinho a mais na sua casa!")
+                .comInscricaoELocal()
+                .comFinalizacao()
+                )
+
