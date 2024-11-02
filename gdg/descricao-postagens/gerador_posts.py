@@ -9,6 +9,8 @@ def exibir_menu():
     print("5. Horas Complementares")
     print("6. Guia de Preparação")
     print("7. Programação")
+    print("8. É hoje")
+    print("9. É amanhã")
     print("0. Sair")
 
 def executar_opcao(opcao):
@@ -35,6 +37,10 @@ def executar_opcao(opcao):
         Post().deGuiaPreparacao().salvar()
     elif opcao == "7": # Programação
         Post().deProgramacao().salvar()
+    elif opcao == "8": # É hoje
+        Post().deEHoje().salvar()
+    elif opcao == "9": # É amanhã
+        Post().deEAmanha().salvar()
     else:
         print("Opção inválida.")
 
