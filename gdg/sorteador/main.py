@@ -7,6 +7,7 @@ import os
 if __name__ == "__main__":
     caminhoPlanilha = 'planilha.xlsx'  ## alterar caso necessário
     leitor = LeitorExcelSympla()  ## alterar caso necessário
+    ingressosParaIgnorar = ["Organização e Palestrantes"]  ## alterar caso necessário
 
     if not os.path.exists(caminhoPlanilha):
         print(f"Erro: O arquivo {caminhoPlanilha} não foi encontrado.")
@@ -14,7 +15,7 @@ if __name__ == "__main__":
         
         
     logging.basicConfig(filename='sorteio.log', level=logging.INFO, format='%(asctime)s - %(message)s')
-    participantes = leitor.ler(caminhoPlanilha, ["Organização e Palestrantes"])
+    participantes = leitor.ler(caminhoPlanilha, ingressosParaIgnorar)
     jaSorteados = []
     
     
