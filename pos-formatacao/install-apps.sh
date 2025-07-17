@@ -100,6 +100,10 @@ PROGRAMAS_DEB=(
   'https://docs.docker.com/desktop/setup/install/linux/'
 )
 
+PROGRAMAS_OUTROS=(
+  'https://download.ebz.epson.net/dsc/search/01/search/searchModule'
+)
+
 echo "Solicitando credenciais de administrador para instalação dos programas..."
 sudo -v
 
@@ -171,6 +175,13 @@ for programa in ${PROGRAMAS_DEB[@]}; do
   vivaldi --new-tab "$programa" 2>> log.txt
 done
 notificacao "Programas DEB abertos no navegador."
+
+# Abre os outros programas no navegador
+notificacao "Abrindo outros programas no navegador..."
+for programa in ${PROGRAMAS_OUTROS[@]}; do
+  vivaldi --new-tab "$programa" 2>> log.txt
+done
+notificacao "Outros Programas abertos no navegador."
 
 notificacao "Faça a instalação manual dos programas AppImage e DEB."
 

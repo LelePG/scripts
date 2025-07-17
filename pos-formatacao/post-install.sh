@@ -117,6 +117,7 @@ function configurar_imagens_docker(){
         postgres:latest
         mysql:latest
         ollama:latest
+        n8nio/n8n:latest
     )
     
     for imagem in ${IMAGENS_DOCKER[@]}; do
